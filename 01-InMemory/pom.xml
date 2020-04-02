@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.devglan</groupId>
-    <artifactId>spring-boot-security-oauth2-example</artifactId>
+    <groupId>lfdajr</groupId>
+    <artifactId>inmemory-client-id</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -15,13 +15,6 @@
     </parent>
 
     <dependencies>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security.oauth</groupId>-->
-<!--            <artifactId>spring-security-oauth2</artifactId>-->
-<!--            <version>2.4.0.RELEASE</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
