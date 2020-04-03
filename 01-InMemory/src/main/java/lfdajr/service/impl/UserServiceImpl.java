@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	private PasswordEncoder passwordEncoder;
 	
 	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+		System.out.println(userId);
 		return new org.springframework.security.core.userdetails.User("Lourival", passwordEncoder.encode("senha"), getAuthority());
 	}
 
