@@ -47,40 +47,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.antMatchers(HttpMethod.GET, ROOT_PATTERN).access("#oauth2.hasScope('read')")
-				.antMatchers(HttpMethod.POST, ROOT_PATTERN).access("#oauth2.hasScope('write')")
-				.antMatchers(HttpMethod.PATCH, ROOT_PATTERN).access("#oauth2.hasScope('write')")
-				.antMatchers(HttpMethod.PUT, ROOT_PATTERN).access("#oauth2.hasScope('write')")
-				.antMatchers(HttpMethod.DELETE, ROOT_PATTERN).access("#oauth2.hasScope('write')");
+		http.authorizeRequests().anyRequest().authenticated();
 	}
-
-	/*private final TokenStore tokenStore;
-
-	public ResourceServerConfig(final TokenStore tokenStore) {
-		this.tokenStore = tokenStore;
-	}
-
-	@Override
-	public void configure(final ResourceServerSecurityConfigurer resources) {
-		resources.tokenStore(tokenStore);
-	}*/
-
-	/*@Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}") String jwkSetUri;
-
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http
-				.authorizeRequests()
-				.anyRequest().authenticated().and()
-			.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
-	}
-
-	@Bean
-	JwtDecoder jwtDecoder() {
-		return NimbusJwtDecoder.withJwkSetUri(this.jwkSetUri).build();
-		//return NimbusJwtDecoder.withSecretKey("");
-	}*/
-
-
 }
